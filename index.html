@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're invited | Community Tech Day</title>
+  <meta name="description" content="Invitation to Community Tech Day. See the date, schedule and venue, and RSVP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#rsvp">Skip to RSVP</a>
+
+  <main>
+    <!-- Edit the event details in script.js (the EVENT block at the top). Text here is the fallback. -->
+    <section class="ticket" aria-labelledby="event-title">
+      <div class="ticket-main">
+        <p class="kicker">You're invited</p>
+        <h1 id="event-title">Community Tech Day</h1>
+        <p class="tagline">A day of demos, talks and hands-on workshops. Come curious, leave with new ideas.</p>
+
+        <dl class="facts">
+          <div><dt>Date</dt><dd id="event-date">Sunday, 20 December 2026</dd></div>
+          <div><dt>Time</dt><dd id="event-time">6:00 pm</dd></div>
+          <div><dt>Place</dt><dd id="event-place">Main Hall, Sample Venue</dd></div>
+        </dl>
+
+        <div class="actions">
+          <a class="btn primary" href="#rsvp">RSVP now</a>
+          <button type="button" class="btn" id="add-cal">Add to calendar</button>
+          <button type="button" class="btn" id="share">Share invite</button>
+        </div>
+      </div>
+
+      <div class="ticket-stub" aria-live="off">
+        <p class="stub-label" id="count-label">Starts in</p>
+        <div class="count" id="countdown">
+          <div><span id="c-days">0</span>days</div>
+          <div><span id="c-hours">0</span>hours</div>
+          <div><span id="c-mins">0</span>mins</div>
+          <div><span id="c-secs">0</span>secs</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="schedule">
+      <h2>What's happening</h2>
+      <ol class="timeline">
+        <li><time>6:00 pm</time><div><h3>Doors open</h3><p>Check in, pick up your badge and settle in.</p></div></li>
+        <li><time>6:30 pm</time><div><h3>Welcome and opening talk</h3><p>A short introduction to the day and what to expect.</p></div></li>
+        <li><time>7:15 pm</time><div><h3>Live demos</h3><p>Short hands-on showcases from our guest speakers.</p></div></li>
+        <li><time>8:30 pm</time><div><h3>Dinner and networking</h3><p>Meet the speakers and other guests over food.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="block" id="details">
+      <h2>Good to know</h2>
+      <div class="info-grid">
+        <article>
+          <h3>Getting there</h3>
+          <p>Sample Venue, Main Road, Your City. Parking is available behind the building.</p>
+          <p><a id="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Sample+Venue" target="_blank" rel="noopener">Open in Google Maps</a></p>
+        </article>
+        <article>
+          <h3>What to bring</h3>
+          <p>Your ID, a notebook and your questions. Laptops are welcome but optional.</p>
+        </article>
+        <article>
+          <h3>Dress code</h3>
+          <p>Smart casual. Wear what makes you comfortable.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block rsvp" id="rsvp">
+      <h2>Will you join us?</h2>
+      <p>Fill this in and your reply opens ready to send. Please reply by 15 December.</p>
+      <form id="rsvp-form" novalidate>
+        <label>Your name
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </label>
+        <label>Number of guests
+          <input id="f-guests" name="guests" type="number" min="1" max="10" value="1">
+        </label>
+        <fieldset>
+          <legend>Can you make it?</legend>
+          <label class="radio"><input type="radio" name="reply" value="Yes, I'll be there" checked> Yes, I'll be there</label>
+          <label class="radio"><input type="radio" name="reply" value="Sorry, I can't make it"> Sorry, I can't make it</label>
+        </fieldset>
+        <label>Message (optional)
+          <textarea id="f-msg" name="message" rows="3"></textarea>
+        </label>
+        <button type="submit" class="btn primary">Send my reply</button>
+        <p class="form-error" id="form-error" role="alert"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hosted by Your Organisation Name &middot; <span id="year">2026</span></p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
